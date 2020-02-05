@@ -1,12 +1,12 @@
 
 const assertArraysEqual = function(actual, expected) {
 
-  let new1 = eqArrays(without(actual),expected);
+  let new1 = eqArrays(actual,expected);
 
   if (new1 === true) {
-    return ` ✅✅✅ Assertion Passed: Middle of ${actual} === ${expected}`;
+    return `✅✅✅ Assertion Passed: Original Array ${actual} === ${expected}`;
   } else {
-    retrun ` 🚫🚫🚫 Assertion Failed: Middle of ${actual} !== ${expected}`;
+    return `🚫🚫🚫 Assertion Failed: Original array  ${actual} !== ${expected}`;
   }
 };
 
@@ -27,15 +27,10 @@ const eqArrays = function (firstArray, secondArray) {
 //assertArraysEqual(middle[1, 2, 3], [2]);
 
 const without = function(array,removedValue) {
-
-  for (let i=0; i< array.length; i++) {
-      for (let j=0; j<= removedValue.length; j++) {
-        if (array[i] === removedValue[j]) {
-        array.splice(i,1); // returns the removed index
-      }
-    }
-  }
-  return array;
+  let result =  array.filter (word => word != removedValue);
+  console.log("Removing ", removedValue, "changes the array to " , result);
 }
-
-console.log(without([1,2,5,6],[2]));
+const words = ["hello", "world", "lighthouse"];
+without(["hello", "world", "lighthouse"], ["lighthouse"]); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+console.log(assertArraysEqual(words, ["hello", "world", "lighthouse"]));
