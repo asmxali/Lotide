@@ -13,15 +13,7 @@ const assertEqual = function(actual, expected) {
 // They have the same number of keys
 // The value for each key in one object is the same as the value for that same key in the other object
 const eqObjects = function(object1, object2) {
-  let object1Length=0;
-  let object2Length=0;
-  for (let key of Object.keys(object1)) {
-    object1Length +=1;
-  }
-  for (let key of Object.keys(object2)) {
-    object2Length +=1;
-  }
-  if(object1Length !== object2Length) {
+  if( Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   } else {
     for (let key of Object.keys(object1)) {
