@@ -1,28 +1,4 @@
 
-const assertArraysEqual = function(actual, expected) {
-
-  let new1 = eqArrays(middle(actual),expected);
-
-  if (new1 === true) {
-    return ` ✅✅✅ Assertion Passed: Middle of ${actual} === ${expected}`;
-  } else {
-    retrun ` 🚫🚫🚫 Assertion Failed: Middle of ${actual} !== ${expected}`;
-  }
-};
-
-const eqArrays = function (firstArray, secondArray) {
-  let count =0;
-  for (let i = 0; i <=firstArray.length-1; i ++) {
-    if (firstArray[i] === secondArray[i]) {
-      count +=1;
-    }
-  }
-  if (count === firstArray.length) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 //assertArraysEqual(middle[1, 2, 3], [2]);
 
@@ -43,4 +19,4 @@ const middle = function(array) {
 
 }
 
-console.log(assertArraysEqual([1,2,3,3,4,5],[3,3]));
+module.exports = middle;
