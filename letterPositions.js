@@ -35,3 +35,5 @@ const letterPositions = function(sentence) {
 };
 
 console.log(letterPositions("asma asma"))
+
+module.exports = letterPositions;

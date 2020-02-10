@@ -45,5 +45,6 @@ let actual = findKey({
 
 let expected = ['noma'];
 assertArraysEqual(actual,expected);
+module.exports = findKey;
 
 

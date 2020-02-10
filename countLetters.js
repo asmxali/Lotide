@@ -14,3 +14,4 @@ let results = {};
   return results;
 }
 console.log(countLetters('asma is here'))
+module.exports = countLetters;
